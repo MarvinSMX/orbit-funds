@@ -48,7 +48,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/orbit-funds/favicon-16x16.png">
     <link rel="icon" type="image/x-icon" href="/orbit-funds/favicon.ico">
     <link rel="manifest" href="/orbit-funds/site.webmanifest">
-    <meta name="theme-color" content="#6B8CFF">
+    <meta name="theme-color" content="#4338CA">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,27 +56,27 @@
     <style>
 /* mrvn ETF Network — shared design system (inline per repo for GitHub Pages) */
 :root {
-  /* Canonical tokens */
-  --bg: #09090B;
-  --surface: #121214;
-  --surface-2: #161618;
-  --ink: #F4F4F5;
-  --muted: #A1A1AA;
-  --line: #27272A;
-  --accent: #6B8CFF;
-  /* Extended / legacy aliases (same values) */
+  /* Canonical tokens — light theme */
+  --bg: #F3F5F8;
+  --surface: #FFFFFF;
+  --surface-2: #EEF1F5;
+  --ink: #111827;
+  --muted: #5B6575;
+  --line: #D8DEE8;
+  --accent: #4338CA;
+  /* Extended / legacy aliases */
   --ink-muted: var(--muted);
-  --ink-faint: #71717A;
+  --ink-faint: #8B95A5;
   --paper: var(--bg);
   --paper-2: var(--surface);
-  --line-strong: #3F3F46;
-  --header: #000000;
-  --header-ink: #FAFAFA;
-  --accent-soft: rgba(107, 140, 255, 0.14);
-  --accent-hover: #9BB0FF;
-  --on-accent: #000000;
-  --danger: #FF4D6A;
-  --pos: #6B8CFF;
+  --line-strong: #B8C0CE;
+  --header: #FFFFFF;
+  --header-ink: #111827;
+  --accent-soft: rgba(67, 56, 202, 0.10);
+  --accent-hover: #3730A3;
+  --on-accent: #FFFFFF;
+  --danger: #DC2626;
+  --pos: #4338CA;
   --shell: 94%;
   --shell-max: 1320px;
   --radius: 0;
@@ -84,18 +84,18 @@
   --font-display: "Syne", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   /* aliases for legacy site CSS */
-  --brand: var(--header);
-  --brand-dark: #000000;
-  --brand-mid: var(--surface);
-  --brand-lite: #1A1A1E;
+  --brand: var(--header-ink);
+  --brand-dark: #111827;
+  --brand-mid: var(--surface-2);
+  --brand-lite: #F8FAFC;
   --gold: var(--accent);
   --gold2: var(--accent-hover);
-  --navy: var(--header);
+  --navy: var(--header-ink);
   --primary: var(--accent);
   --green: var(--accent);
   --purple: var(--accent);
   --purple-bright: var(--accent-hover);
-  --purple-deep: var(--header);
+  --purple-deep: var(--header-ink);
   --bg-primary: var(--bg);
   --bg-secondary: var(--surface);
   --bg-panel: var(--surface);
@@ -131,7 +131,7 @@ body {
 a { color: var(--accent); }
 a:hover { color: var(--accent-hover); }
 
-/* Wordmark header */
+/* Wordmark header — light */
 .nx-header, header.nx-header, body > header:not(.nx-skip) {
   width: 100%;
   background: var(--header);
@@ -157,7 +157,7 @@ a:hover { color: var(--accent-hover); }
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(250, 250, 250, 0.55);
+  color: var(--muted);
   margin-top: 0.45rem;
 }
 .logo-link { text-decoration: none; display: inline-block; }
@@ -173,7 +173,7 @@ a:hover { color: var(--accent-hover); }
   align-items: center;
   gap: 0.35rem;
   padding: 0.45rem 0.85rem;
-  border: 1px solid rgba(255,255,255,0.28);
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   color: var(--header-ink);
   background: transparent;
@@ -412,8 +412,8 @@ input[type="text"], select {
   overflow: hidden;
 }
 #etfTable th, table th, thead th {
-  background: #000 !important;
-  color: var(--accent) !important;
+  background: var(--header-ink) !important;
+  color: #FFFFFF !important;
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: 0.68rem;
@@ -531,15 +531,15 @@ input[type="text"], select {
 /* === end mrvn network design system === */
 
         :root{
-            --bg: #09090B;
+            --bg: #F3F5F8;
             --bg-panel: #FFFFFF;
-            --bg-panel-2: #161618;
+            --bg-panel-2: #EEF1F5;
             --purple: #0284C7;
             --purple-bright: #0EA5E9;
             --purple-deep: #000000;
-            --white: #F4F4F5;
-            --grey: #A1A1AA;
-            --line: #27272A;
+            --white: #111827;
+            --grey: #5B6575;
+            --line: #D8DEE8;
             --green: #34d399;
             --red: #f87171;
         }
@@ -619,7 +619,7 @@ input[type="text"], select {
   .shooting-star{
     position:absolute; top:50%; left:0;
     width:3px; height:3px; border-radius:50%;
-    background:#121214;
+    background:#FFFFFF;
     box-shadow: 0 0 6px 1px rgba(255,255,255,.9), 0 0 14px 3px rgba(2,132,199,.7);
     opacity:0; pointer-events:none;
   }
@@ -722,144 +722,155 @@ input[type="text"], select {
   @media(max-width:560px){.footer-grid{grid-template-columns:1fr;}}
 
 
-/* Force dark network chrome */
+
+/* Force light network chrome */
 :root {
-  --bg: #09090B !important;
-  --surface: #121214 !important;
-  --ink: #F4F4F5 !important;
-  --muted: #A1A1AA !important;
-  --line: #27272A !important;
-  --accent: #6B8CFF !important;
-  --paper: #09090B !important;
-  --paper-2: #121214 !important;
-  --ink-muted: #A1A1AA !important;
-  --text-primary: #F4F4F5 !important;
-  --text-secondary: #A1A1AA !important;
-  --bg-primary: #09090B !important;
-  --bg-secondary: #121214 !important;
-  --gold: #6B8CFF !important;
+  --bg: #F3F5F8 !important;
+  --surface: #FFFFFF !important;
+  --surface-2: #EEF1F5 !important;
+  --ink: #111827 !important;
+  --muted: #5B6575 !important;
+  --line: #D8DEE8 !important;
+  --accent: #4338CA !important;
+  --paper: #F3F5F8 !important;
+  --paper-2: #FFFFFF !important;
+  --ink-muted: #5B6575 !important;
+  --ink-faint: #8B95A5 !important;
+  --header: #FFFFFF !important;
+  --header-ink: #111827 !important;
+  --text-primary: #111827 !important;
+  --text-secondary: #5B6575 !important;
+  --bg-primary: #F3F5F8 !important;
+  --bg-secondary: #FFFFFF !important;
+  --gold: #4338CA !important;
   --gold2: var(--accent-hover) !important;
-  --green: #6B8CFF !important;
-  --primary: #6B8CFF !important;
-  --navy: #000000 !important;
-  --brand: #000000 !important;
-  --light: #121214 !important;
+  --green: #4338CA !important;
+  --primary: #4338CA !important;
+  --navy: #111827 !important;
+  --brand: #111827 !important;
+  --light: #FFFFFF !important;
+  --on-accent: #FFFFFF !important;
 }
 body {
-  background: var(--bg) !important;
-  color: var(--ink) !important;
+  background: #F3F5F8 !important;
+  color: #111827 !important;
 }
 header, .nx-header {
-  background: var(--header) !important;
-  color: var(--header-ink) !important;
-  border-bottom: 2px solid #6B8CFF !important;
+  background: #FFFFFF !important;
+  color: #111827 !important;
+  border-bottom: 2px solid #4338CA !important;
 }
-.logo, .nx-logo, .logo-text { color: var(--header-ink) !important; }
-.logo span, .nx-logo span { color: #6B8CFF !important; }
-.logo-sub, .nx-tagline { color: rgba(250,250,250,0.55) !important; }
-.header-link, .nx-nav a { color: var(--header-ink) !important; }
+.logo, .nx-logo, .logo-text { color: #111827 !important; }
+.logo span, .nx-logo span { color: #4338CA !important; }
+.logo-sub, .nx-tagline { color: #5B6575 !important; }
+.header-link, .nx-nav a {
+  color: #111827 !important;
+  border-color: #B8C0CE !important;
+  background: transparent !important;
+}
 .header-link:hover, .nx-nav a:hover {
-  background: #6B8CFF !important;
-  color: #000 !important;
-  border-color: #6B8CFF !important;
+  background: #4338CA !important;
+  color: #FFFFFF !important;
+  border-color: #4338CA !important;
 }
 .hero, .nx-hero, main > .hero, section.hero, .main-h1 {
-  background: var(--bg) !important;
-  color: var(--ink) !important;
+  background: #F3F5F8 !important;
+  color: #111827 !important;
 }
 .hero h1, .nx-hero h1, section.hero h1, h1 {
-  color: var(--ink) !important;
+  color: #111827 !important;
 }
 .hero-desc, .nx-support, .intro-text, .disclaimer, .col-name, .chip-label,
 .site-network-label, .table-meta, .footer, footer {
-  color: var(--muted) !important;
+  color: #5B6575 !important;
 }
 .site-network-bar {
-  background: var(--surface) !important;
-  border-bottom: 1px solid var(--line) !important;
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #D8DEE8 !important;
 }
 .site-pill {
   background: transparent !important;
-  color: var(--ink) !important;
-  border: 1px solid var(--line-strong) !important;
+  color: #111827 !important;
+  border: 1px solid #B8C0CE !important;
   border-radius: 0 !important;
 }
 .site-pill:hover {
-  background: var(--accent-soft) !important;
-  color: #6B8CFF !important;
-  border-color: #6B8CFF !important;
+  background: rgba(0,0,0,0.04) !important;
+  color: #4338CA !important;
+  border-color: #4338CA !important;
 }
 .site-pill.current {
-  background: #6B8CFF !important;
-  color: #000 !important;
-  border-color: #6B8CFF !important;
+  background: #4338CA !important;
+  color: #FFFFFF !important;
+  border-color: #4338CA !important;
 }
 .chip {
-  background: var(--surface) !important;
-  color: var(--ink) !important;
-  border-color: #6B8CFF !important;
+  background: #FFFFFF !important;
+  color: #111827 !important;
+  border-color: #4338CA !important;
 }
 .chip:hover, .chip.active {
-  background: #6B8CFF !important;
-  color: #000 !important;
+  background: #4338CA !important;
+  color: #FFFFFF !important;
 }
 #filters input, #filters select, #searchInput, #searchFilter, #etfSearch,
 input[type="text"], input[type="search"], select, textarea {
-  background: var(--surface) !important;
-  color: var(--ink) !important;
-  border-color: var(--line-strong) !important;
+  background: #FFFFFF !important;
+  color: #111827 !important;
+  border-color: #B8C0CE !important;
 }
 #filters input::placeholder, input::placeholder {
-  color: var(--ink-faint) !important;
+  color: #8B95A5 !important;
 }
 #etfTable, table.etf-table, .peer-table, #holdings-table, table.ret, table.hublist {
-  background: var(--surface) !important;
-  border-color: var(--line) !important;
-  color: var(--ink) !important;
+  background: #FFFFFF !important;
+  border-color: #D8DEE8 !important;
+  color: #111827 !important;
 }
 #etfTable th, table th, thead th {
-  background: #000 !important;
-  color: #6B8CFF !important;
-  border-bottom-color: #6B8CFF !important;
+  background: #111827 !important;
+  color: #FFFFFF !important;
+  border-bottom-color: #4338CA !important;
 }
 #etfTable td, table td {
-  color: var(--ink) !important;
-  border-bottom-color: var(--line) !important;
+  color: #111827 !important;
+  border-bottom-color: #D8DEE8 !important;
 }
 #etfTable tbody tr:nth-child(even), table tbody tr:nth-child(even),
 tr:nth-child(even) {
-  background: #161618 !important;
+  background: #EEF1F5 !important;
 }
 #etfTable tbody tr:hover, table tbody tr:hover, tr:hover {
-  background: var(--accent-soft) !important;
+  background: rgba(0,0,0,0.03) !important;
 }
 .symbol, .symbol a, .symbol a:visited, .col-ticker, .col-ticker a,
 .yield, .decay, td:before, .tracker-link {
-  color: #6B8CFF !important;
+  color: #4338CA !important;
 }
 .footer a, footer a, a.tracker-link {
-  color: #6B8CFF !important;
+  color: #4338CA !important;
 }
 .stat, .faq, .rel, .info-card, .card, .panel {
-  background: var(--surface) !important;
-  color: var(--ink) !important;
-  border-color: var(--line) !important;
+  background: #FFFFFF !important;
+  color: #111827 !important;
+  border-color: #D8DEE8 !important;
 }
-.vote-count, #voteMsg { color: #6B8CFF !important; }
+.vote-count, #voteMsg { color: #4338CA !important; }
 .back-to-top {
   background: transparent !important;
-  color: #6B8CFF !important;
-  border: 1px solid #6B8CFF !important;
+  color: #4338CA !important;
+  border: 1px solid #4338CA !important;
 }
 .back-to-top:hover {
-  background: #6B8CFF !important;
-  color: #000 !important;
+  background: #4338CA !important;
+  color: #FFFFFF !important;
 }
 .watchlist-btn, .header-pro-btn, #resetFilters, #resetBtn {
-  background: #6B8CFF !important;
-  color: #000 !important;
-  border-color: #6B8CFF !important;
+  background: #4338CA !important;
+  color: #FFFFFF !important;
+  border-color: #4338CA !important;
 }
+
 </style>
 </head>
 <body>
