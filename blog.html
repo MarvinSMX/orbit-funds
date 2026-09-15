@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — OrbitFunds.com</title>
+    
+    <!-- Favicons & Manifest -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#4c1d95">
+
+    <style>
+        :root{
+            --bg: #07060d;
+            --bg-panel: #0f0d1c;
+            --bg-panel-2: #15122a;
+            --purple: #8b5cf6;
+            --purple-bright: #b794f6;
+            --purple-deep: #4c1d95;
+            --white: #f5f3ff;
+            --grey: #a8a3bd;
+            --line: #2a2540;
+            --green: #34d399;
+            --red: #f87171;
+        }
+
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html{scroll-behavior:smooth;}
+        body{
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x:hidden;
+        }
+
+        .stars{
+            position:fixed; inset:0; z-index:-2;
+            background:
+                radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.9), transparent),
+                radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,.7), transparent),
+                radial-gradient(1px 1px at 80% 10%, rgba(255,255,255,.8), transparent),
+                radial-gradient(1.5px 1.5px at 40% 85%, rgba(255,255,255,.6), transparent),
+                radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,.5), transparent),
+                radial-gradient(1.5px 1.5px at 90% 50%, rgba(255,255,255,.7), transparent),
+                radial-gradient(1px 1px at 50% 15%, rgba(255,255,255,.6), transparent),
+                radial-gradient(1px 1px at 75% 90%, rgba(255,255,255,.5), transparent);
+            background-size:100% 100%; background-repeat:repeat;
+        }
+        .stars::after{
+            content:""; position:absolute; inset:0;
+            background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(139,92,246,0.25), transparent 60%);
+        }
+
+        a{color:inherit; text-decoration:none;}
+        .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+
+        /* HEADER */
+        header{
+            position:sticky; top:0; z-index:50;
+            background: rgba(7,6,13,0.75);
+            backdrop-filter: blur(10px);
+            border-bottom:1px solid var(--line);
+        }
+        .nav{
+            display:flex; align-items:center; justify-content:space-between;
+            padding:18px 0; position:relative; overflow:hidden;
+        }
+        .logo{display:flex; align-items:center; font-weight:800; font-size:1.3rem; letter-spacing:0.5px;}
+        .logo .logo-mark{margin-right:10px;}
+        .logo-mark{
+            width:34px; height:34px; border-radius:50%;
+            background: radial-gradient(circle at 35% 35%, var(--purple-bright), var(--purple-deep) 70%, #000 100%);
+            box-shadow: 0 0 18px rgba(139,92,246,.6);
+            position:relative; flex-shrink:0;
+        }
+        .logo span{color:var(--purple-bright);}
+
+        .nav-cta{
+            display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+        }
+        .btn{
+            display:inline-block; padding:8px 16px; border-radius:8px;
+            font-weight:600; font-size:0.85rem; transition:all .2s; border:1px solid transparent;
+            white-space:nowrap;
+        }
+        .btn-ghost{
+            border-color:var(--line); color:var(--grey);
+        }
+        .btn-ghost:hover{
+            border-color:var(--purple); color:var(--white);
+        }
+
+        /* BLOG HERO */
+        .blog-hero{
+            padding:120px 0 80px; text-align:center; position:relative;
+        }
+        .blog-hero h1{
+            font-size:clamp(2.6rem, 6vw, 4.2rem); font-weight:800;
+            letter-spacing:-1.5px; line-height:1.1; margin-bottom:20px;
+        }
+        .blog-hero .grad{
+            background:linear-gradient(135deg, var(--purple-bright), var(--purple) 60%, #fff);
+            -webkit-background-clip:text; background-clip:text; color:transparent;
+        }
+        .blog-hero p{
+            max-width:620px; margin:0 auto; color:var(--grey); font-size:1.1rem;
+        }
+
+        /* BLOG GRID */
+        .blog-grid{
+            display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:28px;
+            padding-bottom:80px;
+        }
+        .blog-card{
+            position:relative;
+            background:var(--bg-panel); border:1px solid var(--line);
+            border-radius:16px; overflow:hidden; display:flex; flex-direction:column;
+            transition:transform .2s, border-color .2s;
+        }
+        .blog-card:hover{
+            transform:translateY(-6px); border-color:var(--purple-deep);
+        }
+        .blog-new-badge{
+            position:absolute; top:14px; left:14px; z-index:3;
+            font-size:0.65rem; font-weight:800; letter-spacing:1px;
+            text-transform:uppercase;
+            background:var(--green); color:#052e1c;
+            padding:4px 10px; border-radius:999px;
+            box-shadow:0 0 14px rgba(52,211,153,.5);
+        }
+        .blog-thumb{
+            height:200px;
+            background:linear-gradient(135deg, var(--purple-deep) 0%, #1c1733 60%, #000 100%);
+            position:relative; display:flex; align-items:center; justify-content:center;
+        }
+        .blog-thumb::before{
+            content:""; position:absolute; inset:0;
+            background:
+                radial-gradient(2px 2px at 25% 30%, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 70% 60%, #fff, transparent),
+                radial-gradient(1px 1px at 50% 80%, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 85% 20%, #fff, transparent);
+            opacity:.7;
+        }
+        .blog-thumb span{
+            font-size:0.78rem; letter-spacing:2px; text-transform:uppercase;
+            color:var(--purple-bright); border:1px solid var(--purple-deep);
+            background:rgba(0,0,0,.5); padding:6px 16px; border-radius:999px;
+            position:relative; z-index:1;
+        }
+        .blog-body{
+            padding:24px; flex:1; display:flex; flex-direction:column;
+        }
+        .blog-tag{
+            font-size:0.78rem; color:var(--purple-bright); font-weight:700;
+            letter-spacing:1px; text-transform:uppercase; margin-bottom:10px;
+        }
+        .blog-body h3{
+            font-size:1.22rem; line-height:1.35; margin-bottom:12px;
+        }
+        .blog-body p{
+            color:var(--grey); font-size:0.95rem; flex:1; margin-bottom:20px;
+        }
+        .blog-meta{
+            font-size:0.84rem; color:var(--grey); border-top:1px solid var(--line);
+            padding-top:14px; display:flex; justify-content:space-between;
+        }
+
+        /* FOOTER */
+        footer{border-top:1px solid var(--line); padding:56px 0 28px; margin-top:40px;}
+        .footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:32px; margin-bottom:40px;}
+        .footer-grid h4{font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:var(--grey); margin-bottom:16px;}
+        .footer-grid ul{list-style:none;}
+        .footer-grid ul li{margin-bottom:10px;}
+        .footer-grid ul li a{color:var(--grey); font-size:0.9rem; transition:color .2s;}
+        .footer-grid ul li a:hover{color:var(--purple-bright);}
+        .footer-brand p{color:var(--grey); font-size:0.9rem; max-width:320px; margin-top:14px;}
+        .footer-bottom{
+            border-top:1px solid var(--line); padding-top:24px;
+            display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+            font-size:0.82rem; color:var(--grey);
+        }
+        @media(max-width:880px){.footer-grid{grid-template-columns:1fr 1fr;}}
+        @media(max-width:560px){.footer-grid{grid-template-columns:1fr;}}
+    </style>
+</head>
+<body>
+<div class="stars"></div>
+
+<header>
+    <div class="wrap nav">
+        <a href="https://OrbitFunds.com" class="logo">
+            <span class="logo-mark"></span>
+            <span class="logo-text">Top<span>Space</span>ETFs.com</span>
+        </a>
+        
+        <div class="nav-cta">
+            <a href="https://yieldatlas.com" class="btn btn-ghost">YieldAtlas ↗</a>
+            <a href="https://monthlypayout.com" class="btn btn-ghost">MonthlyPayout ↗</a>
+            <a href="https://weeklypayout.com" class="btn btn-ghost">WeeklyPayout ↗</a>
+            <a href="https://growthatlas.com" class="btn btn-ghost">GrowthAtlas ↗</a>
+        </div>
+    </div>
+</header>
+
+<!-- BLOG HERO -->
+<section class="blog-hero wrap">
+    <h1>Space <span class="grad">ETF Insights</span></h1>
+    <p>Deep dives, analysis, and updates on the space economy, satellite technology, and the ETFs that track them.</p>
+    <p style="margin-top:12px; color:#f87171; font-size:0.95rem;">Not financial advice — Always do your own research.</p>
+</section>
+
+<!-- BLOG POSTS -->
+<section class="wrap">
+    <div class="blog-grid">
+
+        <!-- Post 1 — SPCX ETF Alternatives (NEW) -->
+        <a href="https://orbitfunds.com/spcx-stock-etf-alternatives.html" style="text-decoration:none; color:inherit;">
+            <article class="blog-card">
+                <span class="blog-new-badge">New</span>
+                <div class="blog-thumb"><span>ETF Guide</span></div>
+                <div class="blog-body">
+                    <div class="blog-tag">ETF GUIDE</div>
+                    <h3>SPCX Stock Just Hit an All-Time Low — 13 Space ETFs to Look At Instead</h3>
+                    <p>SpaceX stock fell to $107.01 on July 28, below its $135 IPO price, with an insider lockup days away. Here's the full map of space ETFs — including which funds already hold SPCX and at what weight.</p>
+                    <div class="blog-meta"><span>July 31, 2026</span><span>12 min read</span></div>
+                </div>
+            </article>
+        </a>
+
+        <!-- Post 2 — SPCX IPO -->
+        <a href="https://orbitfunds.com/spacex-ipo-public-spcx.html" style="text-decoration:none; color:inherit;">
+            <article class="blog-card">
+                <div class="blog-thumb"><span>Breaking</span></div>
+                <div class="blog-body">
+                    <div class="blog-tag">BREAKING</div>
+                    <h3>SpaceX Is Now Public (SPCX): What It Means for Space ETF Investors</h3>
+                    <p>SpaceX completed the largest IPO in history on June 12, 2026. Here's how the stock has traded since, what Nasdaq-100 inclusion means, and how NASA, UFO, and ARKX fit in now.</p>
+                    <div class="blog-meta"><span>July 1, 2026</span><span>9 min read</span></div>
+                </div>
+            </article>
+        </a>
+
+        <!-- Post 3 -->
+        <a href="https://orbitfunds.com/all-in" style="text-decoration:none; color:inherit;">
+            <article class="blog-card">
+                <div class="blog-thumb"><span>Market Outlook</span></div>
+                <div class="blog-body">
+                    <div class="blog-tag">STRATEGY</div>
+                    <h3>Is it Time to Go All In on Space ETFs?</h3>
+                    <p>The space economy is heading toward $1.8–3 trillion by 2035. We explore the massive opportunity, key risks, and how investors should position themselves today.</p>
+                    <div class="blog-meta"><span>June 15, 2026</span><span>11 min read</span></div>
+                </div>
+            </article>
+        </a>
+
+        <!-- Post 4 -->
+        <a href="https://orbitfunds.com/10-space-etfs-to-buy" style="text-decoration:none; color:inherit;">
+            <article class="blog-card">
+                <div class="blog-thumb"><span>Rankings</span></div>
+                <div class="blog-body">
+                    <div class="blog-tag">TOP PICKS</div>
+                    <h3>10 OrbitFunds To Buy in 2026</h3>
+                    <p>A complete ranking of the largest and most promising space & aerospace ETFs including NASA, UFO, ARKX, ITA and more.</p>
+                    <div class="blog-meta"><span>June 15, 2026</span><span>12 min read</span></div>
+                </div>
+            </article>
+        </a>
+
+        <!-- Post 5 -->
+        <a href="https://orbitfunds.com/5-must-see-space-etfs" style="text-decoration:none; color:inherit;">
+            <article class="blog-card">
+                <div class="blog-thumb"><span>ETF Guide</span></div>
+                <div class="blog-body">
+                    <div class="blog-tag">ETF GUIDE</div>
+                    <h3>Forget SpaceX Stock... These 5 Space ETFs Are MUST SEEs</h3>
+                    <p>Why wait for a SpaceX IPO? These five standout ETFs give you immediate, diversified exposure to the entire space economy right now.</p>
+                    <div class="blog-meta"><span>June 15, 2026</span><span>10 min read</span></div>
+                </div>
+            </article>
+        </a>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="wrap">
+        <div class="footer-grid">
+            
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="https://OrbitFunds.com" class="logo">
+                    <span class="logo-mark"></span>
+                    <span class="logo-text">Top<span>Space</span>ETFs.com</span>
+                </a>
+                <p>Independent research and rankings for space, satellite, and aerospace-themed ETFs.<br>
+                   Part of the Top ETFs Network.</p>
+            </div>
+
+            <!-- Site -->
+            <div>
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="https://OrbitFunds.com/">Rankings</a></li>
+                    <li><a href="https://OrbitFunds.com/blog">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div>
+                <h4>Our Network</h4>
+                <ul>
+                    <li><a href="https://yieldatlas.com" target="_blank" rel="noopener">YieldAtlas.com</a></li>
+                    <li><a href="https://monthlypayout.com" target="_blank" rel="noopener">MonthlyPayout.com</a></li>
+                    <li><a href="https://weeklypayout.com" target="_blank" rel="noopener">WeeklyPayout.com</a></li>
+                    <li><a href="https://growthatlas.com" target="_blank" rel="noopener">GrowthAtlas.com</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="https://OrbitFunds.com/legal.html">Disclosure</a></li>
+                    <li><a href="https://OrbitFunds.com/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="https://OrbitFunds.com/terms-of-use.html">Terms of Use</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 OrbitFunds.com. All rights reserved.</span>
+            <span>Not investment advice. Data updated daily.</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
