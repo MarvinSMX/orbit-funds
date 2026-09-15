@@ -3,14 +3,14 @@
 
   <!-- Main Pages -->
   <url>
-    <loc>https://orbitfunds.com/</loc>
+    <loc>https://marvinsmx.github.io/orbit-funds/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://orbitfunds.com/blog.html</loc>
+    <loc>https://marvinsmx.github.io/orbit-funds/blog.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -18,35 +18,35 @@
 
   <!-- Blog Posts -->
   <url>
-    <loc>https://orbitfunds.com/spcx-stock-etf-alternatives.html</loc>
+    <loc>https://marvinsmx.github.io/orbit-funds/spcx-stock-etf-alternatives.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://orbitfunds.com/spacex-ipo-public-spcx.html</loc>
+    <loc>https://marvinsmx.github.io/orbit-funds/spacex-ipo-public-spcx.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://orbitfunds.com/10-space-etfs-to-buy.html</loc>
+    <loc>https://marvinsmx.github.io/orbit-funds/10-space-etfs-to-buy.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://orbitfunds.com/5-must-see-space-etfs.html</loc>
+    <loc>https://marvinsmx.github.io/orbit-funds/5-must-see-space-etfs.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://orbitfunds.com/all-in.html</loc>
+    <loc>https://marvinsmx.github.io/orbit-funds/all-in.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -54,21 +54,21 @@
 
   <!-- Legal Pages -->
   <url>
-    <loc>https://orbitfunds.com/legal.html</loc>
+    <loc>https://marvinsmx.github.io/orbit-funds/legal.html</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://orbitfunds.com/privacy-policy.html</loc>
+    <loc>https://marvinsmx.github.io/orbit-funds/privacy-policy.html</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://orbitfunds.com/terms-of-use.html</loc>
+    <loc>https://marvinsmx.github.io/orbit-funds/terms-of-use.html</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

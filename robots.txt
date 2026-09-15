@@ -19,7 +19,7 @@ Disallow: /wp-admin/
 Disallow: /wp-login.php
 
 # Sitemap
-Sitemap: https://orbitfunds.com/sitemap.xml
+Sitemap: https://marvinsmx.github.io/orbit-funds/sitemap.xml
 
 # Crawl delay (optional - polite to search engines)
 Crawl-delay: 1
