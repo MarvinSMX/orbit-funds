@@ -245,7 +245,7 @@
     <a href="https://topspaceetfs.com/" class="logo"><span class="logo-mark"></span><span class="logo-text">Top<span>Space</span>ETFs.com</span></a>
     <div class="shooting-star" id="shootingStar"></div>
     <div class="nav-cta">
-      <a href="https://topdividendetfs.com" class="btn btn-ghost">Top Dividend ETFs ↗</a>
+      <a href="https://yieldatlas.com" class="btn btn-ghost">Top Dividend ETFs ↗</a>
       <a href="https://monthlyetfs.com" class="btn btn-ghost">Monthly ETFs ↗</a>
       <a href="https://weeklyetfs.com" class="btn btn-ghost">Weekly ETFs ↗</a>
       <a href="https://growthetfs.com" class="btn btn-ghost">Growth ETFs ↗</a>
@@ -367,7 +367,7 @@
 
       <p>Bookmark <strong>TopSpaceETFs.com</strong> for daily rankings, AUM updates, dividend yields, and in-depth comparisons. Also check our sister sites for more thematic opportunities:</p>
       <ul>
-        <li><a href="https://topdividendetfs.com" style="color:var(--purple-bright);">TopDividendETFs.com</a> — Best dividend ETFs ranked</li>
+        <li><a href="https://yieldatlas.com" style="color:var(--purple-bright);">YieldAtlas.com</a> — Best dividend ETFs ranked</li>
         <li><a href="https://monthlyetfs.com" style="color:var(--purple-bright);">MonthlyETFs.com</a> — Monthly paying income ETFs</li>
         <li><a href="https://weeklyetfs.com" style="color:var(--purple-bright);">WeeklyETFs.com</a> — Weekly dividend payers</li>
         <li><a href="https://growthetfs.com" style="color:var(--purple-bright);">GrowthETFs.com</a> — High-growth thematic funds</li>
@@ -401,7 +401,7 @@
           <span class="logo-text">Top<span>Space</span>ETFs.com</span>
         </a>
         <p>Independent research and rankings for space, satellite, and aerospace-themed ETFs.<br>
-           A sister site to <a href="https://topdividendetfs.com" target="_blank" rel="noopener">TopDividendETFs.com</a>.</p>
+           A sister site to <a href="https://yieldatlas.com" target="_blank" rel="noopener">YieldAtlas.com</a>.</p>
       </div>
 
       <!-- Site -->
@@ -417,11 +417,11 @@
       <div>
         <h4>Resources</h4>
         <ul>
-          <li><a href="https://topdividendetfs.com" target="_blank" rel="noopener">TopDividendETFs.com</a></li>
+          <li><a href="https://yieldatlas.com" target="_blank" rel="noopener">YieldAtlas.com</a></li>
           <li><a href="https://monthlyetfs.com" target="_blank" rel="noopener">MonthlyETFs.com</a></li>
           <li><a href="https://weeklyetfs.com" target="_blank" rel="noopener">WeeklyETFs.com</a></li>
           <li><a href="https://growthetfs.com" target="_blank" rel="noopener">GrowthETFs.com</a></li>
-          <li><a href="mailto:Business@TopDividendETFs.com">Contact Us</a></li>
+          <li><a href="mailto:Business@YieldAtlasETFs.com">Contact Us</a></li>
         </ul>
       </div>
 
